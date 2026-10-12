@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>My Expense Tracker</h1>
+    <p>Keep track of your spending in one place.</p>
+  </header>
+
+  <main>
+    <p id="status">Loading exchange rates...</p>
+
+    <section class="card">
+      <label for="homeCurrency">Home currency</label>
+      <select id="homeCurrency">
+        <option value="KES">KES - Kenyan Shilling</option>
+        <option value="USD">USD - US Dollar</option>
+        <option value="EUR">EUR - Euro</option>
+        <option value="GBP">GBP - British Pound</option>
+      </select>
+
+      <h2>Total Expenses</h2>
+      <h2 id="total">KES 0.00</h2>
+    </section>
+
+    <section class="card">
+      <h2>Add an Expense</h2>
+
+      <form id="expenseForm">
+        <label for="description">Description</label>
+        <input id="description" type="text"
+          placeholder="e.g. Lunch" required>
+
+        <label for="amount">Amount</label>
+        <input id="amount" type="number"
+          min="0.01" step="any" required>
+
+        <label for="currency">Currency paid in</label>
+        <select id="currency">
+          <option value="KES">KES</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+
+        <label for="category">Category</label>
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>My Expenses</h2>
+
+      <label for="categoryFilter">Filter by category</label>
+      <select id="categoryFilter">
+        <option value="All">All Categories</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <ul id="expenseList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Simple Expense Tracker &copy; 2026</p>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
+
